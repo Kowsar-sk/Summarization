@@ -28,7 +28,7 @@ model_checkpoint = "MBZUAI/LaMini-Flan-T5-248M"
 model_tokenizer = T5Tokenizer.from_pretrained(model_checkpoint)
 # model = T5ForConditionalGeneration.from_pretrained(model_checkpoint, device_map='auto', torch_dtype=torch.float32)
 
-model = T5ForConditionalGeneration.from_pretrained(model_checkpoint, device_map="auto", torch_dtype="float32", offload_folder="offload")
+model = T5ForConditionalGeneration.from_pretrained(model_checkpoint, device_map=None, torch_dtype="float32", offload_folder="offload")
 # File loader and preprocessing
 def preprocess_pdf(file):
     loader =  PyPDFLoader(file)
